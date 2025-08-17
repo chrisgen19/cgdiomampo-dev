@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 // --- Data is now included directly in the file ---
 const portfolioData = {
-  "name": "John Doe",
-  "contactEmail": "hello@johndoe.com",
+  "name": "Chris Diomampo",
+  "contactEmail": "chrisgen19@cgdiomampo.com",
   "socialLinks": {
     "github": "https://github.com",
     "linkedin": "https://linkedin.com",
@@ -105,7 +105,7 @@ const portfolioData = {
   "about": {
     "photoUrl": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
     "bio": [
-      "Hello! I'm John, a passionate web developer with a knack for creating beautiful and functional websites. With over 5 years of experience in the industry, I've had the privilege of working on a diverse range of projects, from small business websites to large-scale enterprise applications.",
+      "Hello! I'm Chris Diomampo, a passionate web developer with a knack for creating beautiful and functional websites. With over 5 years of experience in the industry, I've had the privilege of working on a diverse range of projects, from small business websites to large-scale enterprise applications.",
       "My goal is to combine my technical skills with a keen eye for design to build products that not only look great but also provide an exceptional user experience."
     ]
   },

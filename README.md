@@ -2,7 +2,7 @@
 
 This is a personal portfolio website built with Next.js and Tailwind CSS. It's designed to be a clean, modern, and easily updatable showcase of my projects, skills, and experience.
 
-![Portfolio Screenshot](https://placehold.co/800x450/e2e8f0/334155?text=Your+Portfolio+Screenshot)
+![Portfolio Screenshot](./public/screenshot.png)
 
 ---
 
@@ -65,4 +65,3 @@ To deploy:
 1.  Push your code to a GitHub repository.
 2.  Import the repository on Vercel.
 3.  Vercel will automatically detect the Next.js framework, configure the build settings, and deploy your site.
-
