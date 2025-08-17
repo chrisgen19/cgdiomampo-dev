@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 // --- Data is now included directly in the file ---
 const portfolioData = {
-  "name": "Chris Diomampo",
-  "contactEmail": "chrisgen19@cgdiomampo.com",
+  "name": "John Doe",
+  "contactEmail": "hello@johndoe.com",
   "socialLinks": {
     "github": "https://github.com",
     "linkedin": "https://linkedin.com",
@@ -103,9 +103,9 @@ const portfolioData = {
       }
   ],
   "about": {
-    "photoUrl": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+    "photoUrl": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80",
     "bio": [
-      "Hello! I'm Chris Diomampo, a passionate web developer with a knack for creating beautiful and functional websites. With over 5 years of experience in the industry, I've had the privilege of working on a diverse range of projects, from small business websites to large-scale enterprise applications.",
+      "Hello! I'm John, a passionate web developer with a knack for creating beautiful and functional websites. With over 5 years of experience in the industry, I've had the privilege of working on a diverse range of projects, from small business websites to large-scale enterprise applications.",
       "My goal is to combine my technical skills with a keen eye for design to build products that not only look great but also provide an exceptional user experience."
     ]
   },
@@ -183,7 +183,6 @@ const AnimatedTerminal = ({ commands }) => {
             const currentCommand = commands[commandIndex.current];
             if (!currentCommand) return;
 
-            // Typing the command
             if (lineIndex.current === 0) {
                 const commandText = currentCommand.command;
                 if (charIndex.current < commandText.length) {
@@ -201,7 +200,6 @@ const AnimatedTerminal = ({ commands }) => {
                     charIndex.current = 0;
                 }
             }
-            // Typing the output
             else if (lineIndex.current === 1) {
                 const outputText = currentCommand.output;
                 if (charIndex.current < outputText.length) {
@@ -261,7 +259,7 @@ const Hero = ({ name, hero }) => {
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
                         <a href="#contact" className="bg-white text-slate-800 px-8 py-3 rounded-md font-medium hover:bg-slate-100 transition-colors duration-300 border border-slate-300 flex items-center justify-center gap-2">
-                            Let's Talk
+                            Let&apos;s Talk
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                         </a>
                     </div>
@@ -284,7 +282,7 @@ const ProjectCard = ({ project, onCaseStudyClick }) => (
             <span className="h-3 w-3 bg-green-500 rounded-full block"></span>
         </div>
         <div className="bg-white p-1">
-            <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover rounded-sm" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found'; }} />
+            <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover rounded-sm" />
         </div>
         <div className="p-6 flex-grow">
             <h3 className="text-xl font-semibold text-slate-800">{project.title}</h3>
@@ -300,9 +298,9 @@ const ProjectCard = ({ project, onCaseStudyClick }) => (
 );
 
 const CaseStudyModal = ({ project, onClose }) => {
-    if (!project) return null;
-
     useEffect(() => {
+        if (!project) return;
+
         const handleEsc = (event) => {
             if (event.key === 'Escape') {
                 onClose();
@@ -314,7 +312,9 @@ const CaseStudyModal = ({ project, onClose }) => {
             window.removeEventListener('keydown', handleEsc);
             document.body.style.overflow = '';
         };
-    }, [onClose]);
+    }, [project, onClose]);
+
+    if (!project) return null;
 
     return (
         <div className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 opacity-100" onClick={onClose}>
@@ -326,7 +326,7 @@ const CaseStudyModal = ({ project, onClose }) => {
                     </button>
                 </div>
                 <div className="p-4 sm:p-6">
-                    <img src={project.imageUrl} alt={project.title} className="w-full h-auto rounded-lg mb-6" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found'; }} />
+                    <img src={project.imageUrl} alt={project.title} className="w-full h-auto rounded-lg mb-6" />
                     <div className="prose max-w-none text-slate-600">
                         <h4 className="text-xl font-semibold text-slate-800 mb-2">About the Project</h4>
                         <p>{project.caseStudy.description}</p>
@@ -408,7 +408,6 @@ const About = ({ about, experience }) => (
                     src={about.photoUrl} 
                     alt="Your Photo" 
                     className="rounded-full shadow-lg w-64 h-64 object-cover" 
-                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x400/e2e8f0/334155?text=Your+Photo'; }} 
                 />
             </div>
             <div className="md:col-span-2">
@@ -476,7 +475,6 @@ export default function App() {
   const data = portfolioData;
 
   useEffect(() => {
-    // --- Smooth Scrolling Logic ---
     const handleSmoothScroll = (event) => {
         const link = event.target.closest('a[href^="#"]');
         if (link) {
