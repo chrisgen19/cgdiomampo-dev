@@ -1,41 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# My Web Developer Portfolio
 
-## Getting Started
+This is a personal portfolio website built with Next.js and Tailwind CSS. It's designed to be a clean, modern, and easily updatable showcase of my projects, skills, and experience.
 
-First, run the development server:
+![Portfolio Screenshot](https://placehold.co/800x450/e2e8f0/334155?text=Your+Portfolio+Screenshot)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
+
+## 🚀 Getting Started
+
+To get a copy of this project up and running on your local machine, follow these simple steps.
+
+### Prerequisites
+
+Make sure you have Node.js and npm installed on your machine. You can download them from [nodejs.org](https://nodejs.org/).
+
+### Installation & Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    ```
+
+2.  **Navigate to the project directory:**
+    ```bash
+    cd your-repo-name
+    ```
+
+3.  **Install NPM packages:**
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 🛠️ Built With
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+This project was built using modern web technologies:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **[Next.js](https://nextjs.org/)** - A React framework for production.
+* **[React](https://reactjs.org/)** - A JavaScript library for building user interfaces.
+* **[Tailwind CSS](https://tailwindcss.com/)** - A utility-first CSS framework for rapid UI development.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 Editing Content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+All the content for the portfolio (personal info, projects, experience, etc.) is managed in the `portfolioData` object located at the top of the `pages/index.js` file. You can easily update your information there without touching the React components.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ▲ Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This portfolio is optimized for deployment on **[Vercel](https://vercel.com/)**, the platform from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
-# cgdiomampo-dev
+To deploy:
+
+1.  Push your code to a GitHub repository.
+2.  Import the repository on Vercel.
+3.  Vercel will automatically detect the Next.js framework, configure the build settings, and deploy your site.
+
