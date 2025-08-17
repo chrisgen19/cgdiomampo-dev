@@ -2,7 +2,7 @@
 
 This is a personal portfolio website built with Next.js and Tailwind CSS. It's designed to be a clean, modern, and easily updatable showcase of my projects, skills, and experience.
 
-![Portfolio Screenshot](./public/screenshot.png)
+![Portfolio Screenshot](./public/screenshot-v1.png)
 
 ---
 
