@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 // --- Data is now included directly in the file ---
 const portfolioData = {
-  "name": "Chris Diomampo",
-  "contactEmail": "chrisgen19@gmail.com",
+  "name": "John Doe",
+  "contactEmail": "hello@johndoe.com",
   "socialLinks": {
     "github": "https://github.com",
     "linkedin": "https://linkedin.com",
@@ -105,7 +105,7 @@ const portfolioData = {
   "about": {
     "photoUrl": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80",
     "bio": [
-      "Hello! I'm Chris, a passionate web developer with a knack for creating beautiful and functional websites. With over 5 years of experience in the industry, I've had the privilege of working on a diverse range of projects, from small business websites to large-scale enterprise applications.",
+      "Hello! I'm John, a passionate web developer with a knack for creating beautiful and functional websites. With over 5 years of experience in the industry, I've had the privilege of working on a diverse range of projects, from small business websites to large-scale enterprise applications.",
       "My goal is to combine my technical skills with a keen eye for design to build products that not only look great but also provide an exceptional user experience."
     ]
   },
@@ -225,7 +225,7 @@ const AnimatedTerminal = ({ commands }) => {
     }, [commands]);
 
     return (
-        <div className="w-full h-full bg-white shadow-2xl rounded-lg border border-slate-200 p-4 font-mono text-sm text-slate-800 flex flex-col">
+        <div className="w-full h-full bg-slate-900 shadow-2xl rounded-lg p-4 font-mono text-sm text-slate-300 flex flex-col">
             <div className="flex items-center gap-2 mb-4">
                 <span className="h-3 w-3 bg-red-500 rounded-full block"></span>
                 <span className="h-3 w-3 bg-yellow-500 rounded-full block"></span>
@@ -233,7 +233,7 @@ const AnimatedTerminal = ({ commands }) => {
             </div>
             <div className="flex-grow overflow-y-auto">
                 {lines.map((line, index) => (
-                    <div key={index} className={line.type === 'output' ? 'text-green-600' : 'text-slate-600'}>
+                    <div key={index} className={line.type === 'output' ? 'text-green-400' : 'text-slate-300'}>
                         <span>{line.text}</span>
                         {index === lines.length - 1 && <span className="animate-pulse">_</span>}
                     </div>
