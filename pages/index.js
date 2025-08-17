@@ -4,6 +4,10 @@ import React, { useState, useEffect, useRef } from 'react';
 const portfolioData = {
   "name": "Chris Diomampo",
   "contactEmail": "hello@chrisdiomampo.com",
+  "siteUrl": "https://www.chrisdiomampo.com", // Replace with your actual domain
+  "ogImage": "https://placehold.co/1200x630/e3f3ff/334155?text=Chris+Diomampo", // Replace with a link to your OG image
+  "twitterHandle": "@chrisdiomampo", // Replace with your Twitter handle
+  "description": "The personal portfolio of Chris Diomampo, a Full Stack Web Developer specializing in creating exceptional digital experiences.",
   "socialLinks": {
     "github": "https://github.com",
     "linkedin": "https://linkedin.com",
