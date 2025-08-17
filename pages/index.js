@@ -265,7 +265,7 @@ const WaveDivider = () => (
 // --- Hero Component (New Version) ---
 const Hero = ({ name, hero }) => {
     return (
-        <section id="hero" className="relative py-24 sm:py-32 bg-slate-50 pb-20">
+        <section id="hero" className="relative py-24 sm:py-32 bg-blue-50 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
                 <div className="text-center md:text-left">
                     <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-slate-900">{name}</h1>
@@ -392,7 +392,7 @@ const Projects = ({ projects }) => {
 
 // --- Tech Stack Section (New Version) ---
 const TechStack = ({ techStack }) => (
-    <section id="tech-stack" className="py-20">
+    <section id="tech-stack" className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Tech I Use</h2>
@@ -452,7 +452,7 @@ const About = ({ about, experience }) => (
 );
 
 const Contact = ({ email }) => (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Get In Touch</h2>
@@ -517,7 +517,7 @@ export default function App() {
   }, [data.name]);
 
   return (
-    <div className="bg-slate-50" style={{fontFamily: "'Inter', sans-serif"}}>
+    <div className="bg-blue-50" style={{fontFamily: "'Inter', sans-serif"}}>
       <style>{`
         .waves {
             position: relative;
