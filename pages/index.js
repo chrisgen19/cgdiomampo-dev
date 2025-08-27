@@ -28,7 +28,7 @@ const portfolioData = {
       "id": 1,
       "title": "E-commerce Platform",
       "category": "Web Application",
-      "imageUrl": "https://placehold.co/600x400/e2e8f0/334155?text=E-commerce",
+      "imageUrl": "/images/sacredmedals.png",
       "liveUrl": "#",
       "caseStudy": {
         "description": "A full-featured e-commerce platform built with the MERN stack. It includes product browsing, a shopping cart, user authentication, and an admin panel for managing products and orders. The focus was on creating a seamless and secure shopping experience.",
@@ -40,7 +40,7 @@ const portfolioData = {
       "id": 2,
       "title": "Project Management Tool",
       "category": "SaaS",
-      "imageUrl": "https://placehold.co/600x400/e2e8f0/334155?text=SaaS+Tool",
+      "imageUrl": "/images/myimprov.png",
       "liveUrl": "#",
       "caseStudy": {
         "description": "A collaborative project management tool designed to help teams organize tasks, track progress, and communicate effectively. Features include Kanban boards, task assignments, and real-time updates.",
@@ -52,7 +52,43 @@ const portfolioData = {
       "id": 3,
       "title": "Corporate Landing Page",
       "category": "Website",
-      "imageUrl": "https://placehold.co/600x400/e2e8f0/334155?text=Landing+Page",
+      "imageUrl": "/images/merthyr.png",
+      "liveUrl": "#",
+      "caseStudy": {
+        "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
+        "techStack": ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
+        "features": ["Fully responsive layout", "Contact form with validation", "Animations on scroll", "Optimized for Core Web Vitals"]
+      }
+    },
+    {
+      "id": 4,
+      "title": "Experience Sunnybank",
+      "category": "Website",
+      "imageUrl": "/images/sunnybank.png",
+      "liveUrl": "#",
+      "caseStudy": {
+        "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
+        "techStack": ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
+        "features": ["Fully responsive layout", "Contact form with validation", "Animations on scroll", "Optimized for Core Web Vitals"]
+      }
+    },
+    {
+      "id": 5,
+      "title": "Suna",
+      "category": "Website",
+      "imageUrl": "/images/suna.png",
+      "liveUrl": "#",
+      "caseStudy": {
+        "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
+        "techStack": ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
+        "features": ["Fully responsive layout", "Contact form with validation", "Animations on scroll", "Optimized for Core Web Vitals"]
+      }
+    },
+    {
+      "id": 5,
+      "title": "Premium Mobile Car Valeting",
+      "category": "Website",
+      "imageUrl": "/images/pmcar.png",
       "liveUrl": "#",
       "caseStudy": {
         "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
