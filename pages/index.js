@@ -104,8 +104,8 @@ const portfolioData = {
         "technologies": [
             { "name": "HTML5", "icon": "html" },
             { "name": "CSS3", "icon": "css" },
-            { "name": "Tailwind CSS", "icon": "tailwind" },
-            { "name": "JavaScript (ES6+)", "icon": "js" },
+            { "name": "Tailwind", "icon": "tailwind" },
+            { "name": "JavaScript", "icon": "js" },
             { "name": "TypeScript", "icon": "ts" },
             { "name": "React", "icon": "react" },
             { "name": "Next.js", "icon": "nextjs" }
@@ -119,7 +119,7 @@ const portfolioData = {
             { "name": "PHP", "icon": "php" },
             { "name": "Laravel", "icon": "laravel" },
             { "name": "WordPress", "icon": "wordpress" },
-            { "name": "REST/GraphQL", "icon": "graphql" }
+            { "name": "GraphQL", "icon": "graphql" }
         ]
       },
       { 
@@ -169,25 +169,26 @@ const portfolioData = {
 // --- SVG Icons Component ---
 const TechIcons = ({ icon, className }) => {
     const icons = {
-        html: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v2H3V3zm2 4h14v14H5V7zm2 2v2h2V9H7zm4 0v2h2V9h-2zm4 0v2h2V9h-2zm-8 4v2h2v-2H7zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2z"/></svg>,
-        css: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v2H3V3zm2 4h14v14H5V7zm8 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>,
-        js: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1 14.5a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5zm4-3a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5z"/></svg>,
-        react: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-4.5-8a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5zm9 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5z"/></svg>,
-        node: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 14.59L8.41 15 7 16.41 10.59 20 17 13.41 15.59 12 10 17.59z"/></svg>,
-        tailwind: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-4 14.5V7.5h2v7h-2zm8 0V7.5h2v7h-2z"/></svg>,
-        graphql: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-4-8a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1z"/></svg>,
-        ts: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1 14h-2v-2h2v2zm0-4h-2V9h2v3zm4 4h-2v-2h2v2zm0-4h-2V9h2v3z"/></svg>,
-        nextjs: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1 14.59L9.41 15 8 16.41 11.59 20 18 13.41 16.59 12 11 17.59z"/></svg>,
-        php: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 14v-2h4v-2h-4V9h6v2h-4v2h4v2h-6z"/></svg>,
-        laravel: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-3 14.59L7.41 15 6 16.41 9.59 20 16 13.41 14.59 12 9 17.59z"/></svg>,
-        wordpress: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-3 14.59L7.41 15 6 16.41 9.59 20 16 13.41 14.59 12 9 17.59z"/></svg>,
-        mysql: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1 14H9v-2h2v2zm0-4H9V9h2v3zm4 4h-2v-2h2v2zm0-4h-2V9h2v3z"/></svg>,
-        postgresql: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1 14H9v-2h2v2zm0-4H9V9h2v3zm4 4h-2v-2h2v2zm0-4h-2V9h2v3z"/></svg>,
-        supabase: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1 14H9v-2h2v2zm0-4H9V9h2v3zm4 4h-2v-2h2v2zm0-4h-2V9h2v3z"/></svg>,
-        vite: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l-10 18h20L12 2zm-1 14h2v2h-2v-2zm0-4h2v2h-2v-2z"/></svg>,
-        git: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1 14.59L9.41 15 8 16.41 11.59 20 18 13.41 16.59 12 11 17.59z"/></svg>,
-        cicd: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1 14H9v-2h2v2zm0-4H9V9h2v3zm4 4h-2v-2h2v2zm0-4h-2V9h2v3z"/></svg>,
-        docker: <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V12H8v-2h2V8.5C10 6.57 11.57 5 13.5 5H16v2h-1.5c-.83 0-1.5.67-1.5 1.5V10h3l-.5 2h-2.5v9.8c4.56-.93 8-4.96 8-9.8z"/></svg>,
+        html: <img src="/images/techstack/html5.svg" className={className} class="h-8 w-8 text-slate-500" alt="HTML" />,
+        css: <img src="/images/techstack/css3.svg" className={className} class="h-8 w-8 text-slate-500" alt="CSS" />,
+        js: <img src="/images/techstack/js.svg" className={className} class="h-8 w-8 text-slate-500" alt="JS" />,
+        react: <img src="/images/techstack/reactjs.svg" className={className} class="h-8 w-8 text-slate-500" alt="REACT" />,
+        node: <img src="/images/techstack/nodejs.svg" className={className} class="h-8 w-8 text-slate-500" alt="NOEDEJS" />,
+        tailwind: <img src="/images/techstack/tailwind.svg" className={className} class="h-8 w-8 text-slate-500" alt="tailwind" />,
+        graphql: <img src="/images/techstack/graphql.svg" className={className} class="h-8 w-8 text-slate-500" alt="graphql" />,
+        ts: <img src="/images/techstack/ts.svg" className={className} class="h-8 w-8 text-slate-500" alt="typescript" />,
+        nextjs: <img src="/images/techstack/nextjs.svg" className={className} class="h-8 w-8 text-slate-500" alt="nextjs" />,
+        php: <img src="/images/techstack/php.svg" className={className} class="h-8 w-8 text-slate-500" alt="php" />,
+        laravel: <img src="/images/techstack/laravel.svg" className={className} class="h-8 w-8 text-slate-500" alt="laravel" />,
+        wordpress: <img src="/images/techstack/wp.svg" className={className} class="h-8 w-8 text-slate-500" alt="wordpress" />,
+        mysql: <img src="/images/techstack/mysql.svg" className={className} class="h-8 w-8 text-slate-500" alt="mysql" />,
+        postgresql: <img src="/images/techstack/postgresql.svg" className={className} class="h-8 w-8 text-slate-500" alt="postgresql" />,
+        mongodb: <img src="/images/techstack/mongodb.svg" className={className} class="h-8 w-8 text-slate-500" alt="mongodb" />,
+        supabase: <img src="/images/techstack/supabase.svg" className={className} class="h-8 w-8 text-slate-500" alt="supabase" />,
+        vite: <img src="/images/techstack/vite.svg" className={className} class="h-8 w-8 text-slate-500" alt="vite" />,
+        git: <img src="/images/techstack/git.svg" className={className} class="h-8 w-8 text-slate-500" alt="git" />,
+        cicd: <img src="/images/techstack/cicd.svg" className={className} class="h-8 w-8 text-slate-500" alt="cicd" />,
+        docker: <img src="/images/techstack/docker.svg" className={className} class="h-8 w-8 text-slate-500" alt="docker" />
     };
     return icons[icon] || null;
 };
@@ -435,7 +436,7 @@ const TechStack = ({ techStack }) => (
     <section id="tech-stack" className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">My Toolkit</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">My TechStack</h2>
                 <p className="mt-4 text-lg text-slate-600">Battle-tested tools I reach for to ship fast, maintainable websites.</p>
             </div>
             <div className="mt-12 grid gap-8 md:grid-cols-2">
@@ -443,7 +444,7 @@ const TechStack = ({ techStack }) => (
                     <div key={category.category} className="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
                         <h3 className="text-xl font-semibold text-slate-800">{category.category}</h3>
                         <p className="mt-1 text-slate-500">{category.description}</p>
-                        <div className="mt-6 flex flex-wrap gap-4">
+                        <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
                             {category.technologies.map(tech => (
                                 <div key={tech.name} className="flex flex-col items-center gap-2 p-2 rounded-md hover:bg-slate-100 transition-colors">
                                     <TechIcons icon={tech.icon} className="h-8 w-8 text-slate-500" />
