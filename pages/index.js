@@ -3,15 +3,15 @@ import React, { useState, useEffect, useRef } from 'react';
 // --- Data is now included directly in the file ---
 const portfolioData = {
   "name": "Chris Diomampo",
-  "contactEmail": "hello@chrisdiomampo.com",
-  "siteUrl": "https://www.chrisdiomampo.com", // Replace with your actual domain
+  "contactEmail": "chrisgen19@gmail.com",
+  "siteUrl": "https://www.cgdiomampo.dev", // Replace with your actual domain
   "ogImage": "https://placehold.co/1200x630/e3f3ff/334155?text=Chris+Diomampo", // Replace with a link to your OG image
-  "twitterHandle": "@chrisdiomampo", // Replace with your Twitter handle
+  "twitterHandle": "@cgdiomampo", // Replace with your Twitter handle
   "description": "The personal portfolio of Chris Diomampo, a Full Stack Web Developer specializing in creating exceptional digital experiences.",
   "socialLinks": {
-    "github": "https://github.com",
-    "linkedin": "https://linkedin.com",
-    "twitter": "https://twitter.com"
+    "github": "https://github.com/chrisgen19",
+    "linkedin": "https://www.linkedin.com/in/cgdiomampo/",
+    "twitter": "https://x.com/chrisgen19"
   },
   "hero": {
     "title": "Full Stack Web Developer",
@@ -143,7 +143,7 @@ const portfolioData = {
       }
   ],
   "about": {
-    "photoUrl": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80",
+    "photoUrl": "/images/chrisgen.jpg",
     "bio": [
       "Hello! I'm Chris, a passionate web developer with a knack for creating beautiful and functional websites. With over 5 years of experience in the industry, I've had the privilege of working on a diverse range of projects, from small business websites to large-scale enterprise applications.",
       "My goal is to combine my technical skills with a keen eye for design to build products that not only look great but also provide an exceptional user experience."
@@ -203,7 +203,7 @@ const Header = ({ name }) => (
                 </div>
                 <nav className="hidden md:flex md:space-x-8">
                     <a href="#projects" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">Projects</a>
-                    <a href="#tech-stack" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">My Toolkit</a>
+                    <a href="#tech-stack" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">TechStack</a>
                     <a href="#about" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">About</a>
                     <a href="#contact" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">Contact</a>
                 </nav>
