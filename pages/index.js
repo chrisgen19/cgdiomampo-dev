@@ -766,14 +766,14 @@ const About = ({ about, experience }) => (
     </AnimatedSection>
 );
 
-// --- NEW COMPONENT: Testimonials Section ---
+// --- NEW COMPONENT: Testimonials Section (FIXED) ---
 const Testimonials = ({ testimonials }) => (
     <AnimatedSection id="testimonials">
         <div className="py-20 bg-blue-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">What Others Say</h2>
-                    <p className="mt-4 text-lg text-slate-600">Feedback from clients and colleagues I've worked with.</p>
+                    <p className="mt-4 text-lg text-slate-600">Feedback from clients and colleagues I&apos;ve worked with.</p>
                 </div>
                 <div className="mt-12 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
                     {testimonials.map((testimonial, index) => (
@@ -783,7 +783,8 @@ const Testimonials = ({ testimonials }) => (
                                     <path d="M9.352 4C4.456 4 0 8.456 0 13.352c0 2.643 1.076 5.013 2.824 6.76L1.22 25.78c-.37.37-.37.972 0 1.343.185.185.428.277.672.277s.487-.092.672-.277L8.24 21.488c.99.31 2.04.464 3.112.464 4.896 0 9.352-4.456 9.352-9.352S14.248 4 9.352 4z" />
                                 </svg>
                                 <blockquote className="mt-6 text-slate-600">
-                                    <p>"{testimonial.quote}"</p>
+                                     {/* FIX: Replaced literal quotes with &quot; HTML entity */}
+                                    <p>&quot;{testimonial.quote}&quot;</p>
                                 </blockquote>
                             </div>
                             <footer className="mt-6">
@@ -798,13 +799,14 @@ const Testimonials = ({ testimonials }) => (
     </AnimatedSection>
 );
 
-// --- Contact Section ---
+// --- Contact Section (FIXED) ---
 const Contact = ({ email }) => (
     <AnimatedSection id="contact">
         <div className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Get In Touch</h2>
+                    {/* FIX: Replaced the apostrophe in "I'd" with &apos; */}
                     <p className="mt-4 text-lg text-slate-600">Have a project in mind or just want to say hello? I&apos;d love to hear from you.</p>
                 </div>
                 <div className="mt-12 max-w-xl mx-auto">
