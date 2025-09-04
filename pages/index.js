@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Head from 'next/head';
 
 // --- Data is now included directly in the file ---
 const portfolioData = {
@@ -197,8 +198,8 @@ const portfolioData = {
         // --- Your existing about data remains here ---
         "photoUrl": "/images/chrisgen.jpg",
         "bio": [
-            "Hello! I'm Christian, a dedicated professional developer and a seasoned full stack developer with over a decade of experience. I've had the privilege of working on a diverse range of projects using frontend (HTML5, CSS3 and SASS), backend development (PHP and MYSQL) and interactive animations (JavaScript).",
-            "My goal is to combine my technical skills with my natural leadership abilities, strong problem-solving, communication skills, and a proven track record in project management to build products that provide an exceptional user experience."
+          "Hello! I'm Christian, a professional Full Stack Developer based in Metro Manila, Philippines with over a decade of experience. As a seasoned web development expert, I specialize in both frontend (React, Next.js) and backend (PHP, Laravel, Node.js) technologies to build high-performance applications.",
+          "My goal is to craft exceptional user experiences that solve real-world problems. Whether you're looking for a React Developer in the Philippines or a versatile full-stack engineer for your next project, I have the skills and project management experience to deliver outstanding results."
         ]
     },
     "experience": [
@@ -915,6 +916,58 @@ export default function App() {
 
     return (
         <div className="bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <Head>
+              {/* --- Primary Meta Tags --- */}
+              <title>{`${data.name} - Full Stack Web Developer`}</title>
+              <meta name="title" content={`${data.name} - Full Stack Web Developer`} />
+              <meta name="description" content={data.description} />
+              <meta name="author" content={data.name} />
+              <link rel="icon" href="/favicon.ico" /> {/* Make sure you have a favicon in your /public folder */}
+
+              {/* --- Open Graph / Facebook --- */}
+              <meta property="og:type" content="website" />
+              <meta property="og:url" content={data.siteUrl} />
+              <meta property="og:title" content={`${data.name} - Full Stack Web Developer`} />
+              <meta property="og:description" content={data.description} />
+              <meta property="og:image" content={data.ogImage} />
+
+              {/* --- Twitter --- */}
+              <meta property="twitter:card" content="summary_large_image" />
+              <meta property="twitter:url" content={data.siteUrl} />
+              <meta property="twitter:title" content={`${data.name} - Full Stack Web Developer`} />
+              <meta property="twitter:description" content={data.description} />
+              <meta property="twitter:creator" content={data.twitterHandle} />
+              <meta property="twitter:image" content={data.ogImage} />
+
+              <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Person",
+                      "name": data.name,
+                      "url": data.siteUrl,
+                      "image": `${data.siteUrl}${data.about.photoUrl}`, // Needs to be an absolute URL
+                      "sameAs": [
+                          data.socialLinks.github,
+                          data.socialLinks.linkedin,
+                          data.socialLinks.twitter
+                      ],
+                      "jobTitle": "Full Stack Web Developer",
+                      "worksFor": {
+                          "@type": "Organization",
+                          "name": data.name // Or your freelance company name
+                      },
+                      "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Mandaluyong City",
+                        "addressRegion": "Metro Manila",
+                        "addressCountry": "PH"
+                      },
+                      "alumniOf": "MIW ORG", // You can add your school here
+                      "knowsAbout": ["React", "Next.js", "PHP", "Laravel", "JavaScript", "TypeScript", "WordPress", "E-commerce"]
+                  })}}
+              />
+            </Head>
             <style>{`
 
                 @keyframes fadeInUp {
