@@ -382,6 +382,12 @@ const Hero = ({ name, hero }) => {
     );
 };
 
+// A simple spinner component using Tailwind CSS
+const ImageLoader = () => (
+  <div className="flex justify-center items-center w-full h-80 bg-slate-200 rounded-lg">
+    <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-slate-900"></div>
+  </div>
+);
 
 // --- Projects Components ---
 const ProjectCard = ({ project, onCaseStudyClick }) => (
@@ -429,54 +435,72 @@ const ProjectCard = ({ project, onCaseStudyClick }) => (
 );
 
 const CaseStudyModal = ({ project, onClose }) => {
-    useEffect(() => {
-        if (!project) return;
+  // 1. State to track image loading status
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
-        const handleEsc = (event) => {
-            if (event.key === 'Escape') {
-                onClose();
-            }
-        };
-        window.addEventListener('keydown', handleEsc);
-        document.body.style.overflow = 'hidden';
-        return () => {
-            window.removeEventListener('keydown', handleEsc);
-            document.body.style.overflow = '';
-        };
-    }, [project, onClose]);
+  useEffect(() => {
+    if (!project) return;
 
-    if (!project) return null;
+    // 2. Reset loading state when project changes
+    setIsImageLoading(true);
 
-    return (
-        <div className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 opacity-100" onClick={onClose}>
-            <div className="modal-content bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-100" onClick={(e) => e.stopPropagation()}>
-                <div className="sticky top-0 bg-white border-b border-slate-200 p-4 sm:p-6 flex justify-between items-center">
-                    <h3 className="text-2xl font-bold text-slate-900">{project.title}</h3>
-                    <button onClick={onClose} className="text-slate-500 hover:text-slate-800">
-                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                    </button>
-                </div>
-                <div className="p-4 sm:p-6">
-                    <img src={project.imageUrlLarge} alt={project.title} className="w-full h-auto rounded-lg mb-6" />
-                    <div className="prose max-w-none text-slate-600">
-                        <h4 className="text-xl font-semibold text-slate-800 mb-2">About the Project</h4>
-                        <p>{project.caseStudy.description}</p>
-                        <h4 className="text-xl font-semibold text-slate-800 mt-6 mb-2">Tech Stack Used</h4>
-                        <ul className="list-disc list-inside">
-                            {project.caseStudy.techStack.map((tech, index) => <li key={index}>{tech}</li>)}
-                        </ul>
-                        <h4 className="text-xl font-semibold text-slate-800 mt-6 mb-2">Key Features</h4>
-                        <ul className="list-disc list-inside">
-                            {project.caseStudy.features.map((feature, index) => <li key={index}>{feature}</li>)}
-                        </ul>
-                        <div className="mt-8">
-                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="bg-slate-900 text-white px-6 py-2 rounded-md font-medium hover:bg-slate-700 transition-colors duration-300 no-underline">Visit Live Site</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    const handleEsc = (event) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+      document.body.style.overflow = '';
+    };
+  }, [project, onClose]);
+
+  if (!project) return null;
+
+  return (
+    <div className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50" onClick={onClose}>
+      <div className="modal-content bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        <div className="sticky top-0 bg-white border-b border-slate-200 p-4 sm:p-6 flex justify-between items-center">
+          <h3 className="text-2xl font-bold text-slate-900">{project.title}</h3>
+          <button onClick={onClose} className="text-slate-500 hover:text-slate-800">
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
         </div>
-    );
+        <div className="p-4 sm:p-6">
+          
+          {/* 3. Show loader while image is loading */}
+          {isImageLoading && <ImageLoader />}
+
+          {/* 4. The actual image, hidden until it loads */}
+          <img 
+            src={project.imageUrlLarge} 
+            alt={project.title} 
+            className={`w-full h-auto rounded-lg mb-6 ${isImageLoading ? 'hidden' : 'block'}`}
+            onLoad={() => setIsImageLoading(false)} 
+          />
+          
+          <div className="prose max-w-none text-slate-600">
+            {/* ... rest of your modal content remains the same */}
+            <h4 className="text-xl font-semibold text-slate-800 mb-2">About the Project</h4>
+            <p>{project.caseStudy.description}</p>
+            <h4 className="text-xl font-semibold text-slate-800 mt-6 mb-2">Tech Stack Used</h4>
+            <ul className="list-disc list-inside">
+              {project.caseStudy.techStack.map((tech, index) => <li key={index}>{tech}</li>)}
+            </ul>
+            <h4 className="text-xl font-semibold text-slate-800 mt-6 mb-2">Key Features</h4>
+            <ul className="list-disc list-inside">
+              {project.caseStudy.features.map((feature, index) => <li key={index}>{feature}</li>)}
+            </ul>
+            <div className="mt-8">
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="bg-slate-900 text-white px-6 py-2 rounded-md font-medium hover:bg-slate-700 transition-colors duration-300 no-underline">Visit Live Site</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const Projects = ({ projects }) => {
