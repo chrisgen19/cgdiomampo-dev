@@ -6,7 +6,7 @@ import Image from 'next/image';
 const portfolioData = {
     "name": "Chris Diomampo",
     "contactEmail": "chrisgen19@gmail.com",
-    "siteUrl": "https://www.cgdiomampo.dev",
+    "siteUrl": process.env.NEXT_PUBLIC_SITE_URL || "https://www.cgdiomampo.dev", // Dynamic value with a fallback
     "ogImage": "https://placehold.co/1200x630/e3f3ff/334155?text=Chris+Diomampo",
     "twitterHandle": "@cgdiomampo",
     "description": "The personal portfolio of Chris Diomampo, a Full Stack Web Developer specializing in creating exceptional digital experiences.",
