@@ -218,27 +218,27 @@ const portfolioData = {
 // --- SVG Icons Component ---
 const TechIcons = ({ icon, className }) => {
     const icons = {
-        html: <img src="/images/techstack/html5.svg" className={className} class="h-8 w-8 text-slate-500" alt="HTML" />,
-        css: <img src="/images/techstack/css3.svg" className={className} class="h-8 w-8 text-slate-500" alt="CSS" />,
-        js: <img src="/images/techstack/js.svg" className={className} class="h-8 w-8 text-slate-500" alt="JS" />,
-        react: <img src="/images/techstack/reactjs.svg" className={className} class="h-8 w-8 text-slate-500" alt="REACT" />,
-        node: <img src="/images/techstack/nodejs.svg" className={className} class="h-8 w-8 text-slate-500" alt="NOEDEJS" />,
-        tailwind: <img src="/images/techstack/tailwind.svg" className={className} class="h-8 w-8 text-slate-500" alt="tailwind" />,
-        graphql: <img src="/images/techstack/graphql.svg" className={className} class="h-8 w-8 text-slate-500" alt="graphql" />,
-        ts: <img src="/images/techstack/ts.svg" className={className} class="h-8 w-8 text-slate-500" alt="typescript" />,
-        nextjs: <img src="/images/techstack/nextjs.svg" className={className} class="h-8 w-8 text-slate-500" alt="nextjs" />,
-        php: <img src="/images/techstack/php.svg" className={className} class="h-8 w-8 text-slate-500" alt="php" />,
-        laravel: <img src="/images/techstack/laravel.svg" className={className} class="h-8 w-8 text-slate-500" alt="laravel" />,
-        wordpress: <img src="/images/techstack/wp.svg" className={className} class="h-8 w-8 text-slate-500" alt="wordpress" />,
-        mysql: <img src="/images/techstack/mysql.svg" className={className} class="h-8 w-8 text-slate-500" alt="mysql" />,
-        postgresql: <img src="/images/techstack/postgresql.svg" className={className} class="h-8 w-8 text-slate-500" alt="postgresql" />,
-        mongodb: <img src="/images/techstack/mongodb.svg" className={className} class="h-8 w-8 text-slate-500" alt="mongodb" />,
-        supabase: <img src="/images/techstack/supabase.svg" className={className} class="h-8 w-8 text-slate-500" alt="supabase" />,
-        vite: <img src="/images/techstack/vite.svg" className={className} class="h-8 w-8 text-slate-500" alt="vite" />,
-        git: <img src="/images/techstack/git.svg" className={className} class="h-8 w-8 text-slate-500" alt="git" />,
-        cicd: <img src="/images/techstack/cicd.svg" className={className} class="h-8 w-8 text-slate-500" alt="cicd" />,
-        docker: <img src="/images/techstack/docker.svg" className={className} class="h-8 w-8 text-slate-500" alt="docker" />,
-        sass: <img src="/images/techstack/sass.svg" className={className} class="h-8 w-8 text-slate-500" alt="sass" />
+      html: <img src="/images/techstack/html5.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="HTML" />,
+      css: <img src="/images/techstack/css3.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="CSS" />,
+      js: <img src="/images/techstack/js.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="JS" />,
+      react: <img src="/images/techstack/reactjs.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="REACT" />,
+      node: <img src="/images/techstack/nodejs.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="NODEJS" />,
+      tailwind: <img src="/images/techstack/tailwind.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="tailwind" />,
+      graphql: <img src="/images/techstack/graphql.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="graphql" />,
+      ts: <img src="/images/techstack/ts.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="typescript" />,
+      nextjs: <img src="/images/techstack/nextjs.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="nextjs" />,
+      php: <img src="/images/techstack/php.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="php" />,
+      laravel: <img src="/images/techstack/laravel.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="laravel" />,
+      wordpress: <img src="/images/techstack/wp.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="wordpress" />,
+      mysql: <img src="/images/techstack/mysql.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="mysql" />,
+      postgresql: <img src="/images/techstack/postgresql.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="postgresql" />,
+      mongodb: <img src="/images/techstack/mongodb.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="mongodb" />,
+      supabase: <img src="/images/techstack/supabase.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="supabase" />,
+      vite: <img src="/images/techstack/vite.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="vite" />,
+      git: <img src="/images/techstack/git.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="git" />,
+      cicd: <img src="/images/techstack/cicd.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="cicd" />,
+      docker: <img src="/images/techstack/docker.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="docker" />,
+      sass: <img src="/images/techstack/sass.svg" className={`h-8 w-8 text-slate-500 ${className || ''}`} alt="sass" />
     };
     return icons[icon] || null;
 };
