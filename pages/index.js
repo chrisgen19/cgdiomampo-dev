@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 
 // --- Data is now included directly in the file ---
 const portfolioData = {
@@ -738,10 +739,12 @@ const About = ({ about, experience }) => (
         <div className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-12 items-center">
                 <div className="md:col-span-1 flex justify-center">
-                    <img
+                    <Image
                         src={about.photoUrl}
-                        alt="Your Photo"
-                        className="rounded-full shadow-lg w-64 h-64 object-cover"
+                        alt={`A professional headshot of ${portfolioData.name}, Full Stack Developer.`}
+                        width={256}
+                        height={256}
+                        className="rounded-full shadow-lg object-cover"
                     />
                 </div>
                 <div className="md:col-span-2">
@@ -882,7 +885,7 @@ const BackToTopButton = () => {
 
 
 // --- Main App Component ---
-export default function App() {
+export default function HomePage() {
     const data = portfolioData;
 
     useEffect(() => {
