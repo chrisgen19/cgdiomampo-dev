@@ -637,35 +637,99 @@ const Projects = ({ projects }) => {
     );
 };
 
-// --- Tech Stack Section ---
-const TechStack = ({ techStack }) => (
-    <AnimatedSection id="tech-stack">
-        <div className="py-20 bg-blue-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">My Tech Stack</h2>
-                    <p className="mt-4 text-lg text-slate-600">Battle-tested tools I reach for to ship fast, maintainable websites.</p>
-                </div>
-                <div className="mt-12 grid gap-8 md:grid-cols-2">
-                    {techStack.map(category => (
-                        <div key={category.category} className="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
-                            <h3 className="text-xl font-semibold text-slate-800">{category.category}</h3>
-                            <p className="mt-1 text-slate-500">{category.description}</p>
-                            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-                                {category.technologies.map(tech => (
-                                    <div key={tech.name} className="flex flex-col items-center gap-2 p-2 rounded-md hover:bg-slate-100 transition-colors">
-                                        <TechIcons icon={tech.icon} className="h-8 w-8 text-slate-500" />
-                                        <span className="text-sm font-medium text-slate-600">{tech.name}</span>
-                                    </div>
-                                ))}
+// --- Tech Stack Section (NEW MODERN VERSION with AUTO-SWITCHING) ---
+const TechStack = ({ techStack }) => {
+    // State to keep track of the currently active tab
+    const [activeCategory, setActiveCategory] = useState(techStack[0].category);
+    
+    // Use a ref to hold the interval ID. This allows us to clear it later.
+    const intervalRef = useRef(null);
+
+    // This function handles a manual tab click
+    const handleTabClick = (category) => {
+        // Stop the auto-switching interval
+        clearInterval(intervalRef.current);
+        // Set the new active category
+        setActiveCategory(category);
+    };
+
+    // This useEffect hook sets up and tears down the interval
+    useEffect(() => {
+        // Start the interval
+        intervalRef.current = setInterval(() => {
+            setActiveCategory(prevCategory => {
+                // Find the index of the current category
+                const currentIndex = techStack.findIndex(cat => cat.category === prevCategory);
+                // Calculate the next index, looping back to 0 if at the end
+                const nextIndex = (currentIndex + 1) % techStack.length;
+                // Return the name of the next category
+                return techStack[nextIndex].category;
+            });
+        }, 3000); // Switch every 3 seconds (3000 milliseconds)
+
+        // This is the cleanup function. It runs when the component unmounts.
+        return () => {
+            // Clear the interval to prevent memory leaks
+            clearInterval(intervalRef.current);
+        };
+    }, [techStack]); // Rerun the effect if techStack data ever changes
+
+    // Find the data for the active category
+    const activeData = techStack.find(cat => cat.category === activeCategory);
+
+    return (
+        <AnimatedSection id="tech-stack">
+            <div className="py-20 bg-blue-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center">
+                        <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">My Tech Stack</h2>
+                        <p className="mt-4 text-lg text-slate-600">Technologies I use to build modern, high-performance web applications.</p>
+                    </div>
+
+                    {/* Tab Navigation - Updated onClick handler */}
+                    <div className="mt-12 flex flex-wrap justify-center gap-2 sm:gap-4">
+                        {techStack.map(category => (
+                            <button
+                                key={category.category}
+                                onClick={() => handleTabClick(category.category)} // Use the new handler
+                                className={`px-4 sm:px-6 py-2 text-sm sm:text-base font-medium rounded-full transition-all duration-300 ${
+                                    activeCategory === category.category
+                                        ? 'bg-slate-900 text-white shadow-lg'
+                                        : 'bg-white text-slate-700 hover:bg-slate-200'
+                                }`}
+                            >
+                                {category.category}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Content Panel */}
+                    <div className="mt-10 min-h-[300px]">
+                        {activeData && (
+                            <div
+                                key={activeCategory}
+                                className="bg-white p-6 sm:p-8 rounded-lg shadow-xl border border-slate-200"
+                            >
+                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                                    {activeData.technologies.map((tech, index) => (
+                                        <div
+                                            key={tech.name}
+                                            className="flex flex-col items-center gap-2 p-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-slate-50 animate-fadeInUp"
+                                            style={{ animationDelay: `${index * 75}ms` }}
+                                        >
+                                            <TechIcons icon={tech.icon} className="h-10 w-10 text-slate-500" />
+                                            <span className="text-sm font-medium text-slate-700 text-center">{tech.name}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        )}
+                    </div>
                 </div>
             </div>
-        </div>
-    </AnimatedSection>
-);
+        </AnimatedSection>
+    );
+};
 
 // --- About Section ---
 const About = ({ about, experience }) => (
@@ -850,6 +914,24 @@ export default function App() {
     return (
         <div className="bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
             <style>{`
+
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translate3d(0, 20px, 0);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translate3d(0, 0, 0);
+                    }
+                }
+
+                .animate-fadeInUp {
+                    /* Set initial state */
+                    opacity: 0; 
+                    /* Apply animation */
+                    animation: fadeInUp 0.5s ease-out forwards;
+                }
                 /* Your existing wave styles remain unchanged */
                 .waves {
                     position: relative;
