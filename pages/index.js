@@ -29,7 +29,8 @@ const portfolioData = {
       "title": "E-commerce Platform",
       "category": "Web Application",
       "imageUrl": "/images/sacredmedals.png",
-      "liveUrl": "#",
+      "imageUrlLarge": "/images/sacredmedals-full.png",
+      "liveUrl": "https://sacredmedals.com/",
       "caseStudy": {
         "description": "A full-featured e-commerce platform built with the MERN stack. It includes product browsing, a shopping cart, user authentication, and an admin panel for managing products and orders. The focus was on creating a seamless and secure shopping experience.",
         "techStack": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
@@ -41,6 +42,7 @@ const portfolioData = {
       "title": "Project Management Tool",
       "category": "SaaS",
       "imageUrl": "/images/myimprov.png",
+      "imageUrlLarge": "/images/myimprov-full.png",
       "liveUrl": "#",
       "caseStudy": {
         "description": "A collaborative project management tool designed to help teams organize tasks, track progress, and communicate effectively. Features include Kanban boards, task assignments, and real-time updates.",
@@ -53,6 +55,7 @@ const portfolioData = {
       "title": "Corporate Landing Page",
       "category": "Website",
       "imageUrl": "/images/merthyr.png",
+      "imageUrlLarge": "/images/merthyr-full.png",
       "liveUrl": "#",
       "caseStudy": {
         "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
@@ -65,6 +68,7 @@ const portfolioData = {
       "title": "Experience Sunnybank",
       "category": "Website",
       "imageUrl": "/images/sunnybank.png",
+      "imageUrlLarge": "/images/sunnybank-full.png",
       "liveUrl": "#",
       "caseStudy": {
         "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
@@ -77,6 +81,7 @@ const portfolioData = {
       "title": "Suna",
       "category": "Website",
       "imageUrl": "/images/suna.png",
+      "imageUrlLarge": "/images/suna-full.png",
       "liveUrl": "#",
       "caseStudy": {
         "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
@@ -89,7 +94,8 @@ const portfolioData = {
       "title": "Premium Mobile Car Valeting",
       "category": "Website",
       "imageUrl": "/images/pmcar.png",
-      "liveUrl": "#",
+      "imageUrlLarge": "/images/pmcar-full.png",
+      "liveUrl": "https://premiummobilecarvaletingglasgow.co.uk/",
       "caseStudy": {
         "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
         "techStack": ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
@@ -104,6 +110,7 @@ const portfolioData = {
         "technologies": [
             { "name": "HTML5", "icon": "html" },
             { "name": "CSS3", "icon": "css" },
+            { "name": "SASS", "icon": "sass" },
             { "name": "Tailwind", "icon": "tailwind" },
             { "name": "JavaScript", "icon": "js" },
             { "name": "TypeScript", "icon": "ts" },
@@ -188,7 +195,8 @@ const TechIcons = ({ icon, className }) => {
         vite: <img src="/images/techstack/vite.svg" className={className} class="h-8 w-8 text-slate-500" alt="vite" />,
         git: <img src="/images/techstack/git.svg" className={className} class="h-8 w-8 text-slate-500" alt="git" />,
         cicd: <img src="/images/techstack/cicd.svg" className={className} class="h-8 w-8 text-slate-500" alt="cicd" />,
-        docker: <img src="/images/techstack/docker.svg" className={className} class="h-8 w-8 text-slate-500" alt="docker" />
+        docker: <img src="/images/techstack/docker.svg" className={className} class="h-8 w-8 text-slate-500" alt="docker" />,
+        sass: <img src="/images/techstack/sass.svg" className={className} class="h-8 w-8 text-slate-500" alt="sass" />
     };
     return icons[icon] || null;
 };
@@ -203,7 +211,7 @@ const Header = ({ name }) => (
                 </div>
                 <nav className="hidden md:flex md:space-x-8">
                     <a href="#projects" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">Projects</a>
-                    <a href="#tech-stack" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">TechStack</a>
+                    <a href="#tech-stack" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">Tech Stack</a>
                     <a href="#about" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">About</a>
                     <a href="#contact" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">Contact</a>
                 </nav>
@@ -335,26 +343,47 @@ const Hero = ({ name, hero }) => {
 
 // --- Projects Components ---
 const ProjectCard = ({ project, onCaseStudyClick }) => (
-    <div className="bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-        <div className="bg-slate-100 px-4 py-2 border-b border-slate-200 flex items-center gap-2">
-            <span className="h-3 w-3 bg-red-500 rounded-full block"></span>
-            <span className="h-3 w-3 bg-yellow-500 rounded-full block"></span>
-            <span className="h-3 w-3 bg-green-500 rounded-full block"></span>
-        </div>
-        <div className="bg-white p-1">
-            <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover rounded-sm" />
-        </div>
-        <div className="p-6 flex-grow">
-            <h3 className="text-xl font-semibold text-slate-800">{project.title}</h3>
-            <p className="mt-2 text-slate-600">{project.category}</p>
-        </div>
-        <div className="p-6 pt-0 mt-auto">
-            <div className="mt-4 flex space-x-4">
-                <button onClick={() => onCaseStudyClick(project)} className="text-sm font-medium text-slate-900 hover:text-slate-600 transition-colors duration-300">View Case Study</button>
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-slate-900 hover:text-slate-600 transition-colors duration-300">Live Site &rarr;</a>
-            </div>
+    <div className="bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden group/card transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+    <div className="bg-slate-100 px-4 py-2 border-b border-slate-200 flex items-center gap-2">
+        <span className="h-3 w-3 bg-red-500 rounded-full block"></span>
+        <span className="h-3 w-3 bg-yellow-500 rounded-full block"></span>
+        <span className="h-3 w-3 bg-green-500 rounded-full block"></span>
+    </div>
+    <div className="bg-white p-1">
+        <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover rounded-sm" />
+    </div>
+    <div className="p-6 flex-grow">
+        <h3 className="text-xl font-semibold text-slate-800">{project.title}</h3>
+        <p className="mt-2 text-slate-600">{project.category}</p>
+    </div>
+    <div className="p-6 pt-0 mt-auto">
+        <div className="mt-4 flex space-x-4">
+            <button onClick={() => onCaseStudyClick(project)} className="inline-flex items-center px-2 py-2 text-sm font-medium text-slate-900 relative group/button cursor-pointer" >
+                <span className="relative">
+                    View Case Study
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-slate-900 transition-all duration-300 group-hover/button:w-full"></span>
+                </span>
+                <svg className="ml-2 w-4 h-4 transition-transform group-hover/button:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+            <a 
+              href={project.liveUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center px-2 py-2 text-sm font-medium text-slate-900 relative group/link"
+            >
+              <span className="relative">
+                Live Site
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-slate-900 transition-all duration-300 group-hover/link:w-full"></span>
+              </span>
+              <svg className="ml-2 w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
         </div>
     </div>
+</div>
 );
 
 const CaseStudyModal = ({ project, onClose }) => {
@@ -386,7 +415,7 @@ const CaseStudyModal = ({ project, onClose }) => {
                     </button>
                 </div>
                 <div className="p-4 sm:p-6">
-                    <img src={project.imageUrl} alt={project.title} className="w-full h-auto rounded-lg mb-6" />
+                    <img src={project.imageUrlLarge} alt={project.title} className="w-full h-auto rounded-lg mb-6" />
                     <div className="prose max-w-none text-slate-600">
                         <h4 className="text-xl font-semibold text-slate-800 mb-2">About the Project</h4>
                         <p>{project.caseStudy.description}</p>
@@ -436,7 +465,7 @@ const TechStack = ({ techStack }) => (
     <section id="tech-stack" className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">My TechStack</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">My Tech Stack</h2>
                 <p className="mt-4 text-lg text-slate-600">Battle-tested tools I reach for to ship fast, maintainable websites.</p>
             </div>
             <div className="mt-12 grid gap-8 md:grid-cols-2">
