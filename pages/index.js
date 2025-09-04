@@ -26,80 +26,122 @@ const portfolioData = {
   "projects": [
     {
       "id": 1,
-      "title": "E-commerce Platform",
-      "category": "Web Application",
+      "title": "SacredMedals.com",
+      "category": "E-commerce",
       "imageUrl": "/images/sacredmedals.png",
       "imageUrlLarge": "/images/sacredmedals-full.png",
       "liveUrl": "https://sacredmedals.com/",
       "caseStudy": {
-        "description": "A full-featured e-commerce platform built with the MERN stack. It includes product browsing, a shopping cart, user authentication, and an admin panel for managing products and orders. The focus was on creating a seamless and secure shopping experience.",
-        "techStack": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-        "features": ["Secure user authentication (JWT)", "Stripe integration for payments", "Admin dashboard for product management", "Responsive design for all devices"]
+        "description": "A headless e-commerce platform for the niche market of religious jewelry. It uses Shopify for robust backend management and a custom React storefront to deliver a modern, fast, and app-like user experience. The project focused on building customer trust through a seamless, secure, and mobile-first design, complete with integrated one-click payment solutions.",
+        "techStack": ["Shopify", "React", "Tailwind CSS", "PayPal", "Apple Pay", "Shop Pay"],
+        "features": [
+          "Headless commerce architecture",
+          "Custom React storefront for a high-performance UI",
+          "Seamless checkout with integrated payments (PayPal, Apple Pay, Shop Pay)",
+          "Fully responsive, mobile-first design",
+          "Shopify-powered inventory and order management",
+          "Utility-first styling with Tailwind CSS for a clean aesthetic"
+        ]
       }
     },
     {
       "id": 2,
-      "title": "Project Management Tool",
-      "category": "SaaS",
+      "title": "MyImprov Online Traffic School",
+      "category": "EdTech / LMS",
       "imageUrl": "/images/myimprov.png",
       "imageUrlLarge": "/images/myimprov-full.png",
-      "liveUrl": "#",
+      "liveUrl": "https://myimprov.com/",
       "caseStudy": {
-        "description": "A collaborative project management tool designed to help teams organize tasks, track progress, and communicate effectively. Features include Kanban boards, task assignments, and real-time updates.",
-        "techStack": ["React", "Firebase", "GraphQL", "Styled Components"],
-        "features": ["Drag-and-drop Kanban boards", "Real-time database with Firestore", "User roles and permissions", "Notifications and activity feeds"]
+        "description": "A complex e-learning platform for state-approved defensive driving courses, built by integrating multiple specialized systems. The project combines a user-friendly WordPress frontend for information and marketing with a custom Laravel-based Learning Management System (LMS) for course delivery. Shopify is seamlessly integrated to handle secure course registrations and payments, creating a unified user journey from discovery to certification.",
+        "techStack": ["WordPress", "Laravel", "Shopify", "LMS"],
+        "features": [
+          "Hybrid architecture integrating WordPress, Laravel, and Shopify",
+          "Custom Learning Management System (LMS) for course progression",
+          "Secure payment and enrollment processing via Shopify",
+          "State-specific course logic and content delivery",
+          "Automated user progress tracking and certificate issuance",
+          "Content management and marketing through a WordPress frontend"
+        ]
       }
     },
     {
       "id": 3,
-      "title": "Corporate Landing Page",
-      "category": "Website",
+      "title": "Merthyr Village Community Portal",
+      "category": "Local Business / Retail Website",
       "imageUrl": "/images/merthyr.png",
       "imageUrlLarge": "/images/merthyr-full.png",
-      "liveUrl": "#",
+      "liveUrl": "https://www.merthyrvillage.com.au/",
       "caseStudy": {
-        "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
-        "techStack": ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
-        "features": ["Fully responsive layout", "Contact form with validation", "Animations on scroll", "Optimized for Core Web Vitals"]
+        "description": "An online hub for the Merthyr Village shopping centre, designed to connect with the local community. Built on a robust WordPress and WooCommerce foundation, the site serves as a central point for store information, news, and events. It leverages powerful marketing and analytics tools like Yoast SEO, Google Tag Manager, and Google Analytics to drive foot traffic and measure online engagement, providing a vital digital presence for the physical retail location.",
+        "techStack": ["WordPress", "WooCommerce", "PHP", "MySQL", "Yoast SEO", "Google Tag Manager", "Google Analytics", "jQuery"],
+        "features": [
+          "Dynamic store directory with individual tenant pages",
+          "Easy-to-update content management for news and events",
+          "WooCommerce integration for potential e-commerce capabilities",
+          "On-page and technical SEO optimization via Yoast SEO",
+          "Advanced tracking and marketing insights with GTM and Google Analytics",
+          "Reliable and interactive user experience using jQuery"
+        ]
       }
     },
     {
       "id": 4,
-      "title": "Experience Sunnybank",
-      "category": "Website",
+      "title": "Experience Sunnybank Community Hub",
+      "category": "Local Business / Community Portal",
       "imageUrl": "/images/sunnybank.png",
       "imageUrlLarge": "/images/sunnybank-full.png",
-      "liveUrl": "#",
+      "liveUrl": "https://www.experiencesunnybank.com.au/",
       "caseStudy": {
-        "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
-        "techStack": ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
-        "features": ["Fully responsive layout", "Contact form with validation", "Animations on scroll", "Optimized for Core Web Vitals"]
+        "description": "A digital guide and community platform for the Sunnybank area, focusing on dining, shopping, and cultural experiences. The website is built on WordPress, providing an easy-to-manage backend for a dynamic frontend. It utilizes Yoast SEO for enhanced search engine visibility to attract tourists and locals, while Cloudflare integration ensures website performance and security, delivering a fast and reliable user experience.",
+        "techStack": ["WordPress", "PHP", "MySQL", "Yoast SEO", "Cloudflare", "jQuery"],
+        "features": [
+          "Comprehensive directory for dining, shopping, and services",
+          "Blog and news section for community engagement",
+          "SEO-driven content strategy using Yoast SEO",
+          "High performance and security with Cloudflare CDN",
+          "User-friendly content updates via WordPress CMS",
+          "Responsive design for browsing on any device"
+        ]
       }
     },
     {
       "id": 5,
-      "title": "Suna",
-      "category": "Website",
+      "title": "Suna E-commerce & Academy Platform",
+      "category": "E-commerce / Beauty Industry",
       "imageUrl": "/images/suna.png",
       "imageUrlLarge": "/images/suna-full.png",
       "liveUrl": "#",
       "caseStudy": {
-        "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
-        "techStack": ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
-        "features": ["Fully responsive layout", "Contact form with validation", "Animations on scroll", "Optimized for Core Web Vitals"]
+        "description": "A comprehensive digital presence for a high-end salon and hair academy, blending e-commerce with informational content. The site is powered by WordPress and WooCommerce, allowing for seamless online sales of professional hair care products. It's built on a reliable Nginx, PHP, and MySQL stack, with Plesk for server management. The user interface is crafted with Bootstrap and jQuery for responsiveness, while Yoast SEO ensures strong visibility in search results, attracting both product customers and academy students.",
+        "techStack": ["WordPress", "WooCommerce", "PHP", "MySQL", "Nginx", "Yoast SEO", "jQuery", "Plesk", "Bootstrap"],
+        "features": [
+          "Integrated e-commerce store for hair care products via WooCommerce",
+          "Detailed information on salon services and academy courses",
+          "Responsive and mobile-friendly design using Bootstrap",
+          "High-performance web serving with Nginx",
+          "Simplified server administration with Plesk",
+          "Strategic SEO implementation with the Yoast SEO plugin"
+        ]
       }
     },
     {
       "id": 5,
-      "title": "Premium Mobile Car Valeting",
-      "category": "Website",
+      "title": "Premium Mobile Car Valeting Glasgow",
+      "category": "Local Service / E-commerce",
       "imageUrl": "/images/pmcar.png",
       "imageUrlLarge": "/images/pmcar-full.png",
       "liveUrl": "https://premiummobilecarvaletingglasgow.co.uk/",
       "caseStudy": {
-        "description": "A modern and professional landing page for a tech startup. The goal was to create a visually appealing site that clearly communicates the company's value proposition and drives user sign-ups. Optimized for performance and SEO.",
-        "techStack": ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
-        "features": ["Fully responsive layout", "Contact form with validation", "Animations on scroll", "Optimized for Core Web Vitals"]
+        "description": "A sophisticated online platform for a mobile car valeting service, enabling seamless booking and payment for customers. The site leverages WordPress and WooCommerce for its core CMS and e-commerce functionality, running on a standard PHP and MySQL stack. It features a dynamic user interface enhanced by AngularJS and a responsive layout built with Bootstrap. For payments, it integrates PayPal, and for marketing, it uses tools like the Facebook Pixel to run targeted digital advertising campaigns, driving customer acquisition.",
+        "techStack": ["WordPress", "WooCommerce", "PHP", "MySQL", "AngularJS", "Bootstrap", "PayPal", "Facebook Pixel"],
+        "features": [
+          "Online booking and scheduling system via WooCommerce",
+          "Secure payment processing with PayPal integration",
+          "Dynamic and interactive elements powered by AngularJS",
+          "Fully responsive design for mobile and desktop using Bootstrap",
+          "Advanced customer tracking and retargeting with Facebook Pixel",
+          "Easy content management for services and pricing through WordPress"
+        ]
       }
     }
   ],
