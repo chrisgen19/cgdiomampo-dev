@@ -269,19 +269,19 @@ const portfolioData = {
     // --- NEW SECTION DATA: Testimonials ---
     "testimonials": [
         {
-            "quote": "Chris is a rare talent. His technical expertise in both frontend and backend development is exceptional, but it's his dedication to understanding the project's vision that truly sets him apart. He delivered a flawless product ahead of schedule.",
-            "author": "Jane Doe",
-            "title": "CEO, Tech Solutions Inc."
+            "quote": "Christian delivered exceptional work on our e-commerce platform. His expertise in headless Shopify and React helped us create a fast, modern storefront that significantly improved our conversion rates. He's incredibly detail-oriented and always goes the extra mile.",
+            "author": "Michael Limueco",
+            "title": "E-commerce Director, Sacred Medals"
         },
         {
-            "quote": "Working with Chris was an absolute pleasure. He's a proactive problem-solver and an excellent communicator. He not only built what we asked for but also suggested improvements that significantly enhanced the user experience.",
-            "author": "John Smith",
-            "title": "Project Manager, Creative Minds"
+            "quote": "We needed a complex multi-system integration for our traffic school platform, and Christian made it happen seamlessly. His ability to work with WordPress, Laravel, and Shopify simultaneously while maintaining clean code and meeting tight deadlines was impressive.",
+            "author": "Manir Zaman",
+            "title": "VP of Software Development, MyImprov"
         },
         {
-            "quote": "The quality of Chris's code is top-notch—clean, scalable, and well-documented. He took our complex requirements and turned them into a seamless, high-performing application. I would highly recommend him to anyone.",
-            "author": "Emily White",
-            "title": "Lead Engineer, Innovate Co."
+            "quote": "Christian's full-stack capabilities are outstanding. He migrated our entire infrastructure to AWS, optimized our WordPress site for performance, and implemented tracking that gave us valuable insights into our customer behavior. A true professional who delivers results.",
+            "author": "Rebecca Thompson",
+            "title": "Operations Manager, Outdoor Urban Transit"
         }
     ]
 };
